@@ -1,0 +1,17 @@
+project:
+  name: uml-diagram-finetuning
+  description: Fine-tuning LLMs for UML diagram generation
+  author: Your Name
+
+paths:
+  data_dir: data/processed
+  output_dir: models
+  log_dir: logs
+  checkpoint_dir: checkpoints
+
+data:
+  train_files:
+    - data/processed/plantuml_training_data_conversational.jsonl
+    - data/processed/uml_training_data_conversational.jsonl
+  validation_split: 0.1
+  seed: 42

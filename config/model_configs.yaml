@@ -1,0 +1,27 @@
+gpt-oss-120b-4bit:
+  model_name: unsloth/gpt-oss-120b-unsloth-bnb-4bit
+  max_seq_length: 4096
+  load_in_4bit: true
+  load_in_8bit: false
+  dtype: bfloat16
+
+gpt-oss-120b-bf16:
+  model_name: unsloth/gpt-oss-120b-BF16
+  max_seq_length: 4096
+  load_in_4bit: true
+  load_in_8bit: false
+  dtype: bfloat16
+
+llama-3.3-70b:
+  model_name: meta-llama/Llama-3.3-70B-Instruct
+  max_seq_length: 8192
+  load_in_4bit: true
+  load_in_8bit: false
+  dtype: bfloat16
+
+mistral-large:
+  model_name: mistralai/Mistral-Large-Instruct-2411
+  max_seq_length: 8192
+  load_in_4bit: true
+  load_in_8bit: false
+  dtype: bfloat16
