@@ -1,10 +1,4 @@
-# Core ML Framework
-torch
-torchvision
-torchaudio
-
 # Fine-tuning Framework
-unsloth
 transformers
 trl
 peft

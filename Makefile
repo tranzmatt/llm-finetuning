@@ -57,7 +57,7 @@ env:
 	@echo "📦 Installing dependencies..."
 	$(VENV_DIR)/bin/pip3 install --upgrade pip
 	$(VENV_DIR)/bin/pip3 install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128
-	$(VENV_DIR)/bin/pip3 install unsloth
+	$(VENV_DIR)/bin/pip3 install unsloth torchao==.0.13.0
 	$(VENV_DIR)/bin/pip3 install -r requirements.txt
 	@echo ""
 	@echo "✅ Environment ready!"
