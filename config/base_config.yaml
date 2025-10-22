@@ -10,8 +10,15 @@ paths:
   checkpoint_dir: checkpoints
 
 data:
+  # Pipeline directories
+  raw_dir: data/raw                    # Original PDFs
+  extracted_dir: data/extracted        # Extracted tokens/text
+  processed_dir: data/processed        # Final JSONL for training
+
+  # Training files
   train_files:
     - data/processed/plantuml_training_data_conversational.jsonl
     - data/processed/uml_training_data_conversational.jsonl
+
   validation_split: 0.1
   seed: 42

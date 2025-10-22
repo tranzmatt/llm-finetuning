@@ -17,6 +17,12 @@ help:
 	@echo "  make activate       - Show activation command"
 	@echo "  make env-check      - Check environment"
 	@echo ""
+	@echo "Data Pipeline:"
+	@echo "  make extract-pdf    - Extract content from PDFs"
+	@echo "  make format-data    - Format extracted data to JSONL"
+	@echo "  make pipeline       - Run full pipeline (extract → format → validate)"
+	@echo "  make validate       - Validate training data"
+	@echo ""
 	@echo "Data:"
 	@echo "  make validate       - Validate training data"
 	@echo ""
@@ -155,6 +161,29 @@ gguf:
 	else \
 		python3 scripts/merge_model.py --model_path "$$MODEL" --to_gguf q8_0 q4_k_m; \
 	fi
+
+# Add after the validate target
+
+extract-pdf:
+	@if [ -d "$(VENV_DIR)" ]; then \
+		$(PYTHON) scripts/extract_pdf.py; \
+	else \
+		python3 scripts/extract_pdf.py; \
+	fi
+
+format-data:
+	@if [ -d "$(VENV_DIR)" ]; then \
+		$(PYTHON) scripts/format_data.py; \
+	else \
+		python3 scripts/format_data.py; \
+	fi
+
+pipeline: extract-pdf format-data validate
+	@echo ""
+	@echo "✅ Data pipeline complete!"
+	@echo "   1. PDFs extracted to data/extracted/"
+	@echo "   2. Data formatted to data/processed/"
+	@echo "   3. Data validated"
 
 clean:
 	@echo "🧹 Cleaning temporary files..."

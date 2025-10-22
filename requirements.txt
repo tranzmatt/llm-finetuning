@@ -28,3 +28,7 @@ psutil
 # Testing & Quality
 pytest
 pytest-cov
+
+# PDF Processing
+PyPDF2
+pdfplumber
