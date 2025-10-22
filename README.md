@@ -1,6 +1,6 @@
-# 🦥 UML Diagram Fine-tuning on DGX1
+# 🦥 Fine-tuning
 
-Fine-tuning large language models for UML and PlantUML diagram generation.
+Fine-tuning large language models
 
 ## Quick Start
 
