@@ -144,6 +144,10 @@ def create_training_args(config, paths, model_config):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     model_name = config['selected_model']
     output_dir = PROJECT_ROOT / paths['output_dir'] / f"{model_name}_{timestamp}"
+
+    # Convert numeric values that YAML might parse as strings
+    learning_rate = float(train_cfg['learning_rate'])
+    weight_decay = float(train_cfg.get('weight_decay', 0.01))
     
     return SFTConfig(
         output_dir=str(output_dir),
