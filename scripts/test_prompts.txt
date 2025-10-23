@@ -1,0 +1,4 @@
+Create a class diagram for a social media platform
+Design a sequence diagram for posting a photo
+Generate an activity diagram for user registration
+Create a use case diagram for a mobile banking app
