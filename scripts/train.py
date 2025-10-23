@@ -155,7 +155,7 @@ def create_training_args(config, paths, model_config):
         per_device_train_batch_size=train_cfg['per_device_train_batch_size'],
         per_device_eval_batch_size=train_cfg.get('per_device_eval_batch_size', 1),
         gradient_accumulation_steps=train_cfg['gradient_accumulation_steps'],
-        learning_rate=train_cfg['learning_rate'],
+        learning_rate=float(train_cfg['learning_rate']),
         warmup_steps=train_cfg['warmup_steps'],
         logging_steps=train_cfg['logging_steps'],
         save_steps=train_cfg['save_steps'],
