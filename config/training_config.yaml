@@ -23,7 +23,7 @@ training:
 lora:
   r: 64
   lora_alpha: 128
-  lora_dropout: 0.05
+  lora_dropout: 0
   bias: none
   target_modules:
     - q_proj
