@@ -2,8 +2,8 @@
 #
 set -e
 
-docker stop unsloth_training
-docker rm unsloth_training
+docker stop unsloth_training || true
+docker rm unsloth_training || true
 
 # docker pull unsloth/unsloth
 #
@@ -15,7 +15,7 @@ docker run -d -e JUPYTER_PORT=8000 \
   -p 9000:8000 -p 2222:22 \
   -v $(pwd):/workspace/work \
   -v ${HOME}/.cache/huggingface:/workspace/.cache/huggingface \
-  --name unsloth_latest \
+  --name unsloth_training \
   unsloth/unsloth
 
 

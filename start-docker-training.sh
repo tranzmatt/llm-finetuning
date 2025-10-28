@@ -4,7 +4,7 @@ set -e
 
 mkdir -p logs
 
-docker exec -d unsloth_training bash -c "cd /workspace/work && torchrun --nproc_per_node=3 --master_port=29500 scripts/unsloth-cli-conversational.py \
+docker exec -d unsloth_training bash -c "cd /workspace/work && python scripts/unsloth-cli-conversational.py \
   --model_name 'unsloth/gpt-oss-120b-unsloth-bnb-4bit' \
   --max_seq_length 4096 \
   --load_in_4bit \
