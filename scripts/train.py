@@ -9,6 +9,13 @@ import sys
 import json
 import yaml
 import torch
+
+# ADD THESE NEW LINES:
+#import torch._dynamo
+#torch._dynamo.config.optimize_ddp = False
+#torch._dynamo.config.suppress_errors = True
+##torch._dynamo.config.disable = True  # Complete disable
+
 import argparse
 from pathlib import Path
 from datetime import datetime
@@ -134,6 +141,9 @@ def setup_model(model_config, lora_config, local_rank=-1):
         use_rslora=lora_config.get('use_rslora', False),
         max_seq_length=model_config['max_seq_length'],
     )
+
+#    if hasattr(model, 'config'):
+#        model.config.use_fused_cross_entropy = False
     
     return model, tokenizer
 

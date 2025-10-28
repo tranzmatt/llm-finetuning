@@ -2,6 +2,9 @@
 #
 set -e
 
+docker stop unsloth_training
+docker rm unsloth_training
+
 # docker pull unsloth/unsloth
 #
 docker run -d -e JUPYTER_PORT=8000 \
