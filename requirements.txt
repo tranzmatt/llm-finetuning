@@ -26,3 +26,7 @@ pytest-cov
 # PDF Processing
 PyPDF2
 pdfplumber
+
+packaging
+setuptools
+wheel
