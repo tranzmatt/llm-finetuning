@@ -2,6 +2,9 @@
 #
 set -e
 
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 docker stop unsloth_training || true
 docker rm unsloth_training || true
 
@@ -13,7 +16,7 @@ docker run -d -e JUPYTER_PORT=8000 \
   -e USER_PASSWORD="unsloth2024" \
   --gpus '"device=0,1,2"' \
   -p 9000:8000 -p 2222:22 \
-  -v $(pwd):/workspace/work \
+  -v ${SCRIPT_DIR}:/workspace/work \
   -v ${HOME}/.cache/huggingface:/workspace/.cache/huggingface \
   --name unsloth_training \
   unsloth/unsloth
